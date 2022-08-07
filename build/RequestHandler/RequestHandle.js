@@ -4,14 +4,24 @@ exports.RequestHandle = void 0;
 class RequestHandle {
     constructor(app) {
         this._app = app;
-        this.registerRequests();
+        this.registerGETRequests();
+        this.registerPOSTRequests();
     }
-    registerRequests() {
+    registerGETRequests() {
         if (!this._app) {
             return;
         }
-        this._app.get('/testdata', (req, res, next) => {
-            console.log("TEggST DATAs :");
+        this._app.get('/test', (req, res, next) => {
+            res.status(200).json({ status: "Works" });
+        });
+    }
+    registerPOSTRequests() {
+        if (!this._app) {
+            return;
+        }
+        this._app.post('/balnaceQueries', (req, res, next) => {
+            //const response = this.BalanceQuery.processBalanceResult(req.body);
+            res.status(200).json({ status: "works" });
         });
     }
 }

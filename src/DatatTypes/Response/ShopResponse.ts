@@ -1,6 +1,9 @@
 import { GeneralResponse } from "./GeneralResponse";
+import { User } from "../User"
+import { Price } from "../Price"
+import { Item } from "../Item"
 
-class ShopResponse extends GeneralResponse {
+export class ShopResponse extends GeneralResponse {
     transactionTime: number;
     transactionTimeAsDate: Date;
 

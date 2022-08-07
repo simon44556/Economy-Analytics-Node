@@ -1,4 +1,4 @@
-class Price {
+export class Price {
     amount: number;
     price: number;
     priceForOne: number;

@@ -1,4 +1,6 @@
 import { GeneralRequest } from "./GeneralRequest";
+import { User } from "../User"
+import { Item } from "../Item"
 
 export class ShopRequest extends GeneralRequest {
     forUser: User;
