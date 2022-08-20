@@ -6,7 +6,6 @@ export namespace BalanceQuery {
     export const processBalanceResult = async function(requestBody: ShopRequest): Promise<GeneralResponse> {
         console.log("REQ FUNCTION");
         console.log(requestBody);
-
-        return new GeneralResponse();
+        return {} as GeneralResponse//GeneralResponse();
     }
 }

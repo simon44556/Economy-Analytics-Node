@@ -1,4 +1,4 @@
-import { createPool, Pool} from 'mysql';
+import { createPool, Pool} from 'mysql2';
 import { DATA_SOURCES } from '../config/env.config';
 
 const dataSource = DATA_SOURCES.mySqlDataSource;
@@ -20,7 +20,7 @@ export const init = () => {
       console.error('[mysql.connector][init][Error]: ', error);
       throw new Error('failed to initialized pool');
     }
-  };
+};
   
 
 export const execute = <T>(query: string, params: string[] | Object): Promise<T> => {
@@ -30,7 +30,7 @@ export const execute = <T>(query: string, params: string[] | Object): Promise<T>
       return new Promise<T>((resolve, reject) => {
         pool.query(query, params, (error, results) => {
           if (error) reject(error);
-          else resolve(results);
+          else resolve(results as any);
         });
       });
   
@@ -38,4 +38,4 @@ export const execute = <T>(query: string, params: string[] | Object): Promise<T>
       console.error('[mysql.connector][execute][Error]: ', error);
       throw new Error('failed to execute MySQL query');
     }
-  }
+}

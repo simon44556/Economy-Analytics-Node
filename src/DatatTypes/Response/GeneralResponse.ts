@@ -1,4 +1,4 @@
-export class GeneralResponse {
-    status!: number;
-    errorMessage!: string;
+export interface GeneralResponse {
+    status: number;
+    errorMessage: string;
 }

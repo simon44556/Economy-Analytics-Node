@@ -1,11 +1,5 @@
-export abstract class GeneralRequest {
+export interface GeneralRequest {
     token: string;
 
-    constructor(token: string) {
-        this.token = token;
-    }
-
-    validateToke(): boolean {
-        return true;
-    }
+    validateToke(): boolean;
 }

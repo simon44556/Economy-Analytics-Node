@@ -2,7 +2,7 @@ import { GeneralRequest } from "./GeneralRequest";
 import { User } from "../User"
 import { Item } from "../Item"
 
-export class ShopRequest extends GeneralRequest {
+export interface ShopRequest extends GeneralRequest {
     forUser: User;
     forItem: Item;
 
@@ -10,14 +10,4 @@ export class ShopRequest extends GeneralRequest {
     DateTo: number | null;
 
     forEventType: number | null; // TODO: Add enum
-
-    constructor(token: string, forUser: User, forItem: Item, DateFrom: number, DateTo: number, forEventType: number) {
-        super(token);
-
-        this.forUser = forUser;
-        this.forItem = forItem;
-        this.DateFrom = DateFrom;
-        this.DateTo = DateTo;
-        this.forEventType = forEventType;
-    }
 }
